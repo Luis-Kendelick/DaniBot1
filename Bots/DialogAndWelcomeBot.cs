@@ -30,31 +30,34 @@ namespace Avanade.Azul.DaniBot.Bots
                 // To learn more about Adaptive Cards, see https://aka.ms/msbot-adaptivecards for more details.
                 if (member.Id != turnContext.Activity.Recipient.Id)
                 {
-                    var welcomeCard = CreateAdaptiveCardAttachment();
-                    var response = MessageFactory.Attachment(welcomeCard);
-                    await turnContext.SendActivityAsync(response, cancellationToken);
+					var welcomeCard = CreateAdaptiveCardAttachment();
+					var response = CreateResponse(turnContext.Activity, welcomeCard);
+					await turnContext.SendActivityAsync(response, cancellationToken);
                     await Dialog.RunAsync(turnContext, ConversationState.CreateProperty<DialogState>("DialogState"), cancellationToken);
                 }
             }
         }
 
-        // Load attachment from embedded resource.
-        private Attachment CreateAdaptiveCardAttachment()
-        {
-            var cardResourcePath = "CoreBot.Cards.welcomeCard.json";
+		// Create an attachment message response.
+		private Activity CreateResponse(IActivity activity, Attachment attachment)
+		{
+			var response = ((Activity)activity).CreateReply();
+			response.Attachments = new List<Attachment>() { attachment };
+			return response;
+		}
 
-            using (var stream = GetType().Assembly.GetManifestResourceStream(cardResourcePath))
-            {
-                using (var reader = new StreamReader(stream))
-                {
-                    var adaptiveCard = reader.ReadToEnd();
-                    return new Attachment()
-                    {
-                        ContentType = "application/vnd.microsoft.card.adaptive",
-                        Content = JsonConvert.DeserializeObject(adaptiveCard),
-                    };
-                }
-            }
-        }
-    }
+		// Load attachment from file.
+		private Attachment CreateAdaptiveCardAttachment()
+		{
+			// combine path for cross platform support
+			string[] paths = { ".", "Cards", "welcomeCard.json" };
+			string fullPath = Path.Combine(paths);
+			var adaptiveCard = File.ReadAllText(fullPath);
+			return new Attachment()
+			{
+				ContentType = "application/vnd.microsoft.card.adaptive",
+				Content = JsonConvert.DeserializeObject(adaptiveCard),
+			};
+		}
+	}
 }
