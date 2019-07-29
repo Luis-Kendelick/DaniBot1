@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
+using Avanade.Azul.DaniBot.Bots;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace Microsoft.BotBuilderSamples.Bots
+namespace Avanade.Azul.DaniBot.Bots
 {
     public class DialogAndWelcomeBot<T> : DialogBot<T>
         where T : Dialog

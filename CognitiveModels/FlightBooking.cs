@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.AI.Luis;
 
-namespace Microsoft.BotBuilderSamples
+namespace Avanade.Azul.DaniBot
 {
     public partial class FlightBooking: IRecognizerConvert
     {

@@ -1,16 +1,16 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using Avanade.Azul.DaniBot.Bots;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Integration.AspNet.Core;
-using Microsoft.BotBuilderSamples.Bots;
-using Microsoft.BotBuilderSamples.Dialogs;
+using Avanade.Azul.DaniBot.Dialogs;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Microsoft.BotBuilderSamples
+namespace Avanade.Azul.DaniBot
 {
     public class Startup
     {

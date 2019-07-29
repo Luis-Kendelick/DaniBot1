@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-namespace Microsoft.BotBuilderSamples
+namespace Avanade.Azul.DaniBot
 {
     public class BookingDetails
     {

@@ -8,7 +8,7 @@ using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
 using Microsoft.Recognizers.Text.DataTypes.TimexExpression;
 
-namespace Microsoft.BotBuilderSamples.Dialogs
+namespace Avanade.Azul.DaniBot.Dialogs
 {
     public class BookingDialog : CancelAndHelpDialog
     {

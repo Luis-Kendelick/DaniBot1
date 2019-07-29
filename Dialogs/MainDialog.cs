@@ -12,7 +12,7 @@ using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Logging;
 using Microsoft.Recognizers.Text.DataTypes.TimexExpression;
 
-namespace Microsoft.BotBuilderSamples.Dialogs
+namespace Avanade.Azul.DaniBot.Dialogs
 {
     public class MainDialog : ComponentDialog
     {

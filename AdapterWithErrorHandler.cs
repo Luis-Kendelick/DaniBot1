@@ -8,7 +8,7 @@ using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Microsoft.BotBuilderSamples
+namespace Avanade.Azul.DaniBot
 {
     public class AdapterWithErrorHandler : BotFrameworkHttpAdapter
     {

@@ -4,7 +4,7 @@
 using Microsoft.Bot.Connector.Authentication;
 using Microsoft.Extensions.Configuration;
 
-namespace Microsoft.BotBuilderSamples
+namespace Avanade.Azul.DaniBot
 {
     public class ConfigurationCredentialProvider : SimpleCredentialProvider
     {
