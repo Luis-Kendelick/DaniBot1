@@ -1,0 +1,7 @@
+{
+  "name": "AzulHacks",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

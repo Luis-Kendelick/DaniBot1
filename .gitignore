@@ -1,6 +1,5 @@
-*.dll
-*.pdb
-obj/**
-bin/**
-runtimes/**
-/.vs/**
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/DaniBot.MobileUI/node_modules
