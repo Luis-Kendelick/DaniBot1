@@ -15,11 +15,9 @@ namespace Avanade.HackathonAzul.AzulServicesDirtyTests
 
             ISessionManager sessionManager = new SessionManagerClient();
             LogonRequest logonRequest = new LogonRequest();
-            //String username = "04490265409"; //thiagoburgo@gmail.com
-            //String password = "Th1@g0bel0"; //r2ZtNu5ZnFdmkDv
-            string domain = "ref";
-            string username = "avanade.tbelo"; //thiagoburgo@gmail.com
-            string password = "Th1@g0bel0"; //r2ZtNu5ZnFdmkDv
+            string domain = "???";
+            string username = "??????????????????";
+            string password = "??????????????????";
 
             logonRequest.logonRequestData = new LogonRequestData
             {
