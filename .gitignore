@@ -4,3 +4,5 @@
 
 /DaniBot.MobileUI/node_modules
 *.dtbcache
+**/obj/**
+**/bin/**
