@@ -30,7 +30,7 @@ namespace Avanade.Azul.DaniBot.Bots
 				if (member.Id != turnContext.Activity.Recipient.Id)
 				{
 					var welcomeCard = CreateAdaptiveCardAttachment();
-					var response = CreateResponse(turnContext.Activity, welcomeCard);
+					var response = CreateResponse(turnContext.Activity.Create(, welcomeCard);
 					await turnContext.SendActivityAsync(response, cancellationToken);
 					await Dialog.RunAsync(turnContext, ConversationState.CreateProperty<DialogState>("DialogState"), cancellationToken);
 				}
