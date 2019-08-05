@@ -1,17 +1,20 @@
 ﻿using Avanade.HackathonAzul.DaniBot.Cards;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Microsoft.Bot.Schema
 {
     public static class IActivityExtensions
     {
-        public static Activity CreateFrom(this IActivity activity, ICardFactory cardFactory)
+        public static Activity CreateFrom(this IActivity activity, CardFactoryType cardFactoryType)
+        {
+            return CreateFrom(activity, cardFactoryType, null);
+        }
+
+        public static Activity CreateFrom(this IActivity activity, CardFactoryType cardFactoryType, CardParameter parameter)
         {
             Activity response = ((Activity)activity).CreateReply();
-            response.Attachments = cardFactory.BuildAttachments();
+
+            response.Attachments = CardFactory.CreateBuilder(cardFactoryType).Build();
+
             return response;
         }
     }
