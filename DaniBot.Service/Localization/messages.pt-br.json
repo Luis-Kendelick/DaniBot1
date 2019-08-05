@@ -1,0 +1,10 @@
+﻿{
+	"error": {
+		"tooManyAttempts": "Você deveria ter digitado o que eu esperava, mas ok.",
+		"accessDenied": "Acesso negado!",
+		"internalServerError": "Desculpe, deu bug. Tente outra vez."
+	},
+	"mainDialog": {
+		"welcome":  "Olá, eu sou a DANI! Eu serei sua atendente até que se prove o contrário."
+	}
+}
