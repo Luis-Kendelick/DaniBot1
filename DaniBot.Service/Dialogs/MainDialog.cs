@@ -30,7 +30,7 @@ namespace Avanade.Azul.DaniBot.Dialogs
             AddDialog(bookingDialog);
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
             {
-                IntroStepAsync,
+                //IntroStepAsync,
                 ActStepAsync,
                 FinalStepAsync,
             }));
@@ -57,41 +57,24 @@ namespace Avanade.Azul.DaniBot.Dialogs
 
         private async Task<DialogTurnResult> ActStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
-            if (!_luisRecognizer.IsConfigured)
+
+            switch (stepContext.ToString())
             {
-                // LUIS is not configured, we just run the BookingDialog path with an empty BookingDetailsInstance.
-                return await stepContext.BeginDialogAsync(nameof(BookingDialog), new BookingDetails(), cancellationToken);
-            }
+                case "localizarVoo":
+                    //return await stepContext.BeginDialogAsync(nameof(BookingDialog), bookingDetails, cancellationToken);
 
-            // Call LUIS and gather any potential booking details. (Note the TurnContext has the response to the prompt.)
-            var luisResult = await _luisRecognizer.RecognizeAsync<FlightBooking>(stepContext.Context, cancellationToken);
-            switch (luisResult.TopIntent().intent)
-            {
-                case FlightBooking.Intent.BookFlight:
-                    await ShowWarningForUnsupportedCities(stepContext.Context, luisResult, cancellationToken);
+                case "cadastro":
+				//await stepContext.Context.SendActivityAsync(getWeatherMessage, cancellationToken);
+				//break;
 
-                    // Initialize BookingDetails with any entities we may have found in the response.
-                    var bookingDetails = new BookingDetails()
-                    {
-                        // Get destination and origin from the composite entities arrays.
-                        Destination = luisResult.ToEntities.Airport,
-                        Origin = luisResult.FromEntities.Airport,
-                        TravelDate = luisResult.TravelDate,
-                    };
+				case "faq":
 
-                    // Run the BookingDialog giving it whatever details we have from the LUIS call, it will fill out the remainder.
-                    return await stepContext.BeginDialogAsync(nameof(BookingDialog), bookingDetails, cancellationToken);
+				case "resetSenha":
 
-                case FlightBooking.Intent.GetWeather:
-                    // We haven't implemented the GetWeatherDialog so we just display a TODO message.
-                    var getWeatherMessageText = "TODO: get weather flow here";
-                    var getWeatherMessage = MessageFactory.Text(getWeatherMessageText, getWeatherMessageText, InputHints.IgnoringInput);
-                    await stepContext.Context.SendActivityAsync(getWeatherMessage, cancellationToken);
-                    break;
+				case "login":
 
-                default:
-                    // Catch all for unhandled intents
-                    var didntUnderstandMessageText = $"Sorry, I didn't get that. Please try asking in a different way (intent was {luisResult.TopIntent().intent})";
+				default:
+                    var didntUnderstandMessageText = "Desculpe, não entendi!";
                     var didntUnderstandMessage = MessageFactory.Text(didntUnderstandMessageText, didntUnderstandMessageText, InputHints.IgnoringInput);
                     await stepContext.Context.SendActivityAsync(didntUnderstandMessage, cancellationToken);
                     break;
