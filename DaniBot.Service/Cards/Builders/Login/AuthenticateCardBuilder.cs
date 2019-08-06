@@ -13,7 +13,7 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Builders.Login
 				new Attachment
 				{
 					ContentType = AdaptiveCard.ContentType,
-					Content = new AdaptiveCard("1.1")
+					Content = new AdaptiveCard("1.0")
 					{
 						Body = new List<AdaptiveElement>
 						{
