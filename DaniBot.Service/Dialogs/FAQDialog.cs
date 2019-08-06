@@ -1,12 +1,12 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Avanade.HackathonAzul.DaniBot.Cards.Factory;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.Bot.Schema;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Avanade.Azul.DaniBot.Dialogs
 {
@@ -31,9 +31,22 @@ namespace Avanade.Azul.DaniBot.Dialogs
 			return new DialogTurnResult(DialogTurnStatus.Waiting);
 		}
 
-		private Task<DialogTurnResult> ActionSteps(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+		private async Task<DialogTurnResult> ActionSteps(WaterfallStepContext stepContext, CancellationToken cancellationToken)
 		{
-			throw new NotImplementedException();
+			switch (stepContext.Result.ToString())
+			{
+				case "CheckIn":
+				case "DiferencaAssentosCheckin":
+				case "TudoAzulFaq":
+				case "VantagensDani":
+				default:
+					var didntUnderstandMessageText = "Desculpe, não entendi!";
+					var didntUnderstandMessage = MessageFactory.Text(didntUnderstandMessageText, didntUnderstandMessageText, InputHints.IgnoringInput);
+					await stepContext.Context.SendActivityAsync(didntUnderstandMessage, cancellationToken);
+					break;
+			}
+
+			return await stepContext.NextAsync(null, cancellationToken);
 		}
 	}
 }

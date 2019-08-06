@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using Avanade.HackathonAzul.DaniBot.Cards.Factory;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
@@ -41,6 +42,7 @@ namespace Avanade.Azul.DaniBot.Dialogs
 
 		private async Task<DialogTurnResult> IntroStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
 		{
+			await stepContext.Context.SendAdaptiveCardsActivityAsyncFrom(CardFactory.CreateWelcomeCardBuilder(), cancellationToken);
 			return new DialogTurnResult(DialogTurnStatus.Waiting);
 		}
 

@@ -24,11 +24,7 @@ namespace Avanade.Azul.DaniBot.Bots
                 // Greet anyone that was not the target (recipient) of this message.
                 // To learn more about Adaptive Cards, see https://aka.ms/msbot-adaptivecards for more details.
                 if (member.Id != turnContext.Activity.Recipient.Id)
-                {
-                    var response = turnContext.Activity.CreateFrom(CardFactory.CreateWelcomeCardBuilder());
-                    await turnContext.SendActivityAsync(response, cancellationToken);
                     await Dialog.RunAsync(turnContext, ConversationState.CreateProperty<DialogState>("DialogState"), cancellationToken);
-                }
             }
         }
     }

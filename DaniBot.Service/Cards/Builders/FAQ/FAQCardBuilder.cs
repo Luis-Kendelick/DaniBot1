@@ -36,22 +36,22 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Builders
 							new AdaptiveSubmitAction
 							{
 								Title = "Quais as vantagens de fazer o check-in online?",
-								Data = "checkin"
+								Data = "CheckIn"
 							},
 							new AdaptiveSubmitAction
 							{
 								Title = "Qual a diferença entre marcar assentos e fazer check-in?",
-								Data = "diferencaassentoscheckin"
+								Data = "DiferencaAssentosCheckin"
 							},
 							new AdaptiveSubmitAction
 							{
 								Title = "Como funciona o Tudo Azul?",
-								Data = "tudoazulfaq"
+								Data = "TudoAzulFaq"
 							},
 							new AdaptiveSubmitAction
 							{
 								Title = "Quais a vantagens de utilizar Dani?",
-								Data = "vantagensDani"
+								Data = "VantagensDani"
 							}
 						}
 					}
