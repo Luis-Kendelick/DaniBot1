@@ -1,4 +1,5 @@
 ﻿using Avanade.HackathonAzul.DaniBot.Cards.Builders;
+using Avanade.HackathonAzul.DaniBot.Cards.Builders.FAQ;
 
 namespace Avanade.HackathonAzul.DaniBot.Cards.Factory
 {

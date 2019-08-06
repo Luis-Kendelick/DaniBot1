@@ -4,7 +4,7 @@ using Microsoft.Bot.Schema;
 using System;
 using System.Collections.Generic;
 
-namespace Avanade.HackathonAzul.DaniBot.Cards.Builders
+namespace Avanade.HackathonAzul.DaniBot.Cards.Builders.FAQ
 {
 	public class FAQCardBuilder : ICardBuilder
 	{
@@ -27,7 +27,7 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Builders
 							},
 							new AdaptiveImage
 							{
-								Url = new Uri("http://www.equinautic.com.br/media/catalog/product/cache/1/image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_1336.jpg"),
+								Url = new Uri("https://static.wixstatic.com/media/ece054_afb801e3e96c425783b598f49a2a41d8~mv2.png/v1/fill/w_600,h_288,al_c,q_80,usm_0.66_1.00_0.01/best-magento-2_3-FAQ.webp"),
 								Size = AdaptiveImageSize.Stretch
 							}
 						},
@@ -37,11 +37,6 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Builders
 							{
 								Title = "Quais as vantagens de fazer o check-in online?",
 								Data = "CheckIn"
-							},
-							new AdaptiveSubmitAction
-							{
-								Title = "Qual a diferença entre marcar assentos e fazer check-in?",
-								Data = "DiferencaAssentosCheckin"
 							},
 							new AdaptiveSubmitAction
 							{
