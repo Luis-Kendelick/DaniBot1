@@ -3,7 +3,7 @@ using Microsoft.Bot.Schema;
 using System;
 using System.Collections.Generic;
 
-namespace Avanade.HackathonAzul.DaniBot.Cards
+namespace Avanade.HackathonAzul.DaniBot.Cards.Builders
 {
     public class WelcomeCardBuilder : ICardBuilder
     {
@@ -26,7 +26,7 @@ namespace Avanade.HackathonAzul.DaniBot.Cards
                             },
                             new AdaptiveImage
                             {
-                                Url = new Uri("http://adaptivecards.io/content/cats/1.png"),
+                                Url = new Uri("http://www.equinautic.com.br/media/catalog/product/cache/1/image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_1336.jpg"),
                                 Size = AdaptiveImageSize.Stretch
                             }
                         },

@@ -1,4 +1,4 @@
-using Avanade.HackathonAzul.DaniBot.Cards;
+using Avanade.HackathonAzul.DaniBot.Cards.Factory;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
@@ -25,7 +25,7 @@ namespace Avanade.Azul.DaniBot.Bots
                 // To learn more about Adaptive Cards, see https://aka.ms/msbot-adaptivecards for more details.
                 if (member.Id != turnContext.Activity.Recipient.Id)
                 {
-                    var response = turnContext.Activity.CreateFrom(CardFactoryType.Welcome);
+                    var response = turnContext.Activity.CreateFrom(CardFactory.CreateWelcomeCardBuilder());
                     await turnContext.SendActivityAsync(response, cancellationToken);
                     await Dialog.RunAsync(turnContext, ConversationState.CreateProperty<DialogState>("DialogState"), cancellationToken);
                 }

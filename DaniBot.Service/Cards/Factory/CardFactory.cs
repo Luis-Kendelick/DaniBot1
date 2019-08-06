@@ -1,19 +1,17 @@
-﻿using System;
+﻿using Avanade.HackathonAzul.DaniBot.Cards.Builders;
 
-namespace Avanade.HackathonAzul.DaniBot.Cards
+namespace Avanade.HackathonAzul.DaniBot.Cards.Factory
 {
-    public class CardFactory
+    public static class CardFactory
     {
-        public static ICardBuilder CreateBuilder(CardFactoryType cardFactoryType)
-        {
-            switch (cardFactoryType)
-            {
-                case CardFactoryType.Welcome:
-                    return new WelcomeCardBuilder();
+		public static WelcomeCardBuilder CreateWelcomeCardBuilder()
+		{
+			return new WelcomeCardBuilder();
+		}
 
-                default:
-                    throw new Exception("Card builder not implemented");
-            }
-        }
-    }
+		public static FAQCardBuilder CreateFAQCardBuilder()
+		{
+			return new FAQCardBuilder();
+		}
+	}
 }

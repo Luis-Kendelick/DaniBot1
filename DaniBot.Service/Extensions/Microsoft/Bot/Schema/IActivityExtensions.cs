@@ -4,16 +4,11 @@ namespace Microsoft.Bot.Schema
 {
     public static class IActivityExtensions
     {
-        public static Activity CreateFrom(this IActivity activity, CardFactoryType cardFactoryType)
-        {
-            return CreateFrom(activity, cardFactoryType, null);
-        }
-
-        public static Activity CreateFrom(this IActivity activity, CardFactoryType cardFactoryType, CardParameter parameter)
+        public static Activity CreateFrom(this IActivity activity, ICardBuilder cardBuilder)
         {
             Activity response = ((Activity)activity).CreateReply();
 
-            response.Attachments = CardFactory.CreateBuilder(cardFactoryType).Build();
+            response.Attachments = cardBuilder.Build();
 
             return response;
         }
