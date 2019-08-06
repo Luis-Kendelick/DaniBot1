@@ -1,5 +1,6 @@
 ﻿using Avanade.HackathonAzul.DaniBot.Cards.Builders;
 using Avanade.HackathonAzul.DaniBot.Cards.Builders.FAQ;
+using Avanade.HackathonAzul.DaniBot.Cards.Builders.Login;
 
 namespace Avanade.HackathonAzul.DaniBot.Cards.Factory
 {
@@ -13,6 +14,16 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Factory
 		public static FAQCardBuilder CreateFAQCardBuilder()
 		{
 			return new FAQCardBuilder();
+		}
+
+		public static AuthenticateCardBuilder CreateLoginCardBuilder()
+		{
+			return new AuthenticateCardBuilder();
+		}
+
+		public static AuthenticatedCardBuilder CreateAuthenticatedCardBuilder()
+		{
+			return new AuthenticatedCardBuilder();
 		}
 	}
 }
