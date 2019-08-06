@@ -29,22 +29,22 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Builders.Login
 							new AdaptiveSubmitAction
 							{
 								Title = "Digitar usuário e senha",
-								Data = "userpassword"
+								Data = "UserPassword"
 							},
 							new AdaptiveSubmitAction
 							{
 								Title = "Voz",
-								Data = "voice"
+								Data = "Voice"
 							},
 							new AdaptiveSubmitAction
 							{
 								Title = "Reconhecimento facial",
-								Data = "face"
+								Data = "Face"
 							},
 							new AdaptiveSubmitAction
 							{
 								Title = "Digital",
-								Data = "fingprint"
+								Data = "Fingprint"
 							}
 						}
 					}
