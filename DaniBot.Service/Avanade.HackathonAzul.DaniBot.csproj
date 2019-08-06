@@ -15,6 +15,12 @@
     <PackageReference Include="Microsoft.Recognizers.Text.DataTypes.TimexExpression" Version="1.2.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Localization\messages.pt-br.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
   <Import Project="PostDeployScripts\IncludeSources.targets" Condition="Exists('PostDeployScripts\IncludeSources.targets')" />
   <Import Project="..\PostDeployScripts\IncludeSources.targets" Condition="Exists('..\PostDeployScripts\IncludeSources.targets')" />
   
