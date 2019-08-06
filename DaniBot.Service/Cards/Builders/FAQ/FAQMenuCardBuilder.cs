@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Avanade.HackathonAzul.DaniBot.Cards.Builders.FAQ
 {
-	public class FAQCardBuilder : ICardBuilder
+	public class FAQMenuCardBuilder : ICardBuilder
 	{
 		public List<Attachment> Build()
 		{

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Avanade.HackathonAzul.DaniBot.Cards.Builders
 {
-    public class WelcomeCardBuilder : ICardBuilder
+    public class WelcomeMenuCardBuilder : ICardBuilder
     {
         public List<Attachment> Build()
         {
@@ -20,7 +20,7 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Builders
                         {
                             new AdaptiveTextBlock()
                             {
-                                Text = "Olá, eu sou Dani e irei te auxiliar nesse atendimento. Por favor, selecione uma das opções abaixo ou digite o que você gostaria de consultar:",
+                                Text = Resources.Messages.MainDialog.Welcome,
                                 Size = AdaptiveTextSize.Default,
                                 Wrap = true
                             },
@@ -34,27 +34,27 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Builders
                         {
                             new AdaptiveSubmitAction
                             {
-                                Title = "Localizar vôo",
+                                Title = Resources.Messages.MainDialog.LocalizarVoo,
                                 Data = "LocalizarVoo"
                             },
                             new AdaptiveSubmitAction
                             {
-                                Title = "Realizar cadastro",
+                                Title = Resources.Messages.MainDialog.RealizarCadastro,
                                 Data = "RealizarCadastro"
                             },
                             new AdaptiveSubmitAction
                             {
-                                Title = "FAQ",
+                                Title = Resources.Messages.MainDialog.FAQ,
                                 Data = "ConsultarFAQ"
                             },
                             new AdaptiveSubmitAction
                             {
-                                Title = "Reset de senha",
+                                Title = Resources.Messages.MainDialog.ResetSenha,
                                 Data = "ResetSenha"
                             },
                             new AdaptiveSubmitAction
                             {
-                                Title = "Login",
+                                Title = Resources.Messages.MainDialog.Login,
                                 Data = "Login"
                             }
                         }

@@ -8,6 +8,6 @@
 			public string TooManyAttempts { get; set; }
 			public string AccessDenied { get; set; }
 			public string InternalServerError { get; set; }
-		}
+        }
 	}
 }

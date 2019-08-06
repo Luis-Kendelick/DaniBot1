@@ -1,10 +1,19 @@
 ﻿{
-	"error": {
-		"tooManyAttempts": "Você deveria ter digitado o que eu esperava, mas ok.",
-		"accessDenied": "Acesso negado!",
-		"internalServerError": "Desculpe, deu bug. Tente outra vez."
-	},
-	"mainDialog": {
-		"welcome":  "Olá, eu sou a DANI! Eu serei sua atendente até que se prove o contrário."
-	}
+  "error": {
+    "tooManyAttempts": "Você deveria ter digitado o que eu esperava, mas ok.",
+    "accessDenied": "Acesso negado!",
+    "internalServerError": "Desculpe, deu bug. Tente outra vez."
+  },
+  "global": {
+    "sorryIDontUnderstand": "Desculpe, não entendi",
+    "anythingElse": "Em que mais posso te ajudar?"
+  },
+  "mainDialog": {
+    "welcome": "Olá, eu sou Dani e irei te auxiliar nesse atendimento. Por favor, selecione uma das opções abaixo ou digite o que você gostaria de consultar.",
+    "localizarVoo": "Localizar vôo",
+    "realizarCadastro": "Realizar cadastro",
+    "fAQ": "Perguntas frequêntes",
+    "resetSenha": "Reset de senha",
+    "login": "Login"
+  }
 }

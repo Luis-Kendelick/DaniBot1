@@ -6,16 +6,12 @@ using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Logging;
-using Microsoft.Recognizers.Text.DataTypes.TimexExpression;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Avanade.Azul.DaniBot.Dialogs
 {
-	public class MainDialog : ComponentDialog
+    public class MainDialog : ComponentDialog
 	{
 		private readonly FlightBookingRecognizer _luisRecognizer;
 		protected readonly ILogger Logger;
@@ -42,7 +38,7 @@ namespace Avanade.Azul.DaniBot.Dialogs
 
 		private async Task<DialogTurnResult> IntroStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
 		{
-			await stepContext.Context.SendAdaptiveCardsActivityAsyncFrom(CardFactory.CreateWelcomeCardBuilder(), cancellationToken);
+			await stepContext.Context.SendActivityAsyncFromAdaptiveCard(CardFactory.CreateWelcomeCardBuilder(), cancellationToken);
 			return new DialogTurnResult(DialogTurnStatus.Waiting);
 		}
 
@@ -61,7 +57,7 @@ namespace Avanade.Azul.DaniBot.Dialogs
 				case "Login":
 					//return await stepContext.BeginDialogAsync(nameof(AuthenticateDialog), cancellationToken);
 				default:
-					var didntUnderstandMessageText = "Desculpe, não entendi!";
+					var didntUnderstandMessageText = Resources.Messages.Global.SorryIDontUnderstand;
 					var didntUnderstandMessage = MessageFactory.Text(didntUnderstandMessageText, didntUnderstandMessageText, InputHints.IgnoringInput);
 					await stepContext.Context.SendActivityAsync(didntUnderstandMessage, cancellationToken);
 					break;
@@ -72,7 +68,7 @@ namespace Avanade.Azul.DaniBot.Dialogs
 
 		private async Task<DialogTurnResult> FinalStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
 		{
-			var messageText = stepContext.Options?.ToString() ?? "Em que mais posso te ajudar?";
+			var messageText = stepContext.Options?.ToString() ?? Resources.Messages.Global.AnythingElse;
 			var promptMessage = MessageFactory.Text(messageText, messageText, InputHints.ExpectingInput);
 			return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = promptMessage }, cancellationToken);
 		}
