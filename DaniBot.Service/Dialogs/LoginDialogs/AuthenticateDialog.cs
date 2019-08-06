@@ -10,26 +10,30 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Avanade.Azul.DaniBot.Dialogs
+namespace Avanade.HackathonAzul.DaniBot.Dialogs.LoginDialogs
 {
 	public class AuthenticateDialog : ComponentDialog
 	{
+		private readonly string AuthenticateViaTextId;
+
 		public AuthenticateDialog()
 			: base(nameof(AuthenticateDialog))
 		{
 			AddDialog(new TextPrompt(nameof(TextPrompt)));
+			AddDialog(new AuthenticateViaTextDialog());
 			AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
 			{
 				IntroStep,
 				ActionSteps
 			}));
 
+			AuthenticateViaTextId = nameof(AuthenticateViaTextDialog);
 			InitialDialogId = nameof(WaterfallDialog);
 		}
 
 		private async Task<DialogTurnResult> IntroStep(WaterfallStepContext stepContext, CancellationToken cancellationToken)
 		{
-			await stepContext.Context.SendAdaptiveCardsActivityAsyncFrom(CardFactory.CreateLoginCardBuilder(), cancellationToken);
+			await stepContext.Context.SendActivityAsyncFromAdaptiveCard(CardFactory.CreateLoginCardBuilder(), cancellationToken);
 			return new DialogTurnResult(DialogTurnStatus.Waiting);
 		}
 
@@ -38,6 +42,7 @@ namespace Avanade.Azul.DaniBot.Dialogs
 			switch (stepContext.Result.ToString())
 			{
 				case "UserPassword":
+					await stepContext.BeginDialogAsync(AuthenticateViaTextId, cancellationToken);
 					break;
 				case "Voice":
 					break;

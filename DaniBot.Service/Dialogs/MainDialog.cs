@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using Avanade.HackathonAzul.DaniBot.Cards.Factory;
+using Avanade.HackathonAzul.DaniBot.Dialogs.LoginDialogs;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;

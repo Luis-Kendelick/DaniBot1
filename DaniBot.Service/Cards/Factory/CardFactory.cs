@@ -31,5 +31,10 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Factory
         {
             return new AuthenticatedCardBuilder();
         }
-    }
+
+		public static AuthenticateByTextCardBuilder CreateAuthenticateByTextCardBuilder()
+		{
+			return new AuthenticateByTextCardBuilder();
+		}
+	}
 }
