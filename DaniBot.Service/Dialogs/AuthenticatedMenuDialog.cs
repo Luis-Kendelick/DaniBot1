@@ -17,7 +17,7 @@ namespace Avanade.Azul.DaniBot.Dialogs
 	public class AuthenticatedMenuDialog : ComponentDialog
 	{
 		public AuthenticatedMenuDialog()
-			: base(nameof(FAQDialog))
+			: base(nameof(AuthenticatedMenuDialog))
 		{
 			AddDialog(new TextPrompt(nameof(TextPrompt)));
 			AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]

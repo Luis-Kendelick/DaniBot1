@@ -1,4 +1,5 @@
-﻿using Avanade.HackathonAzul.DaniBot.Cards.Factory;
+﻿using Avanade.Azul.DaniBot.Dialogs;
+using Avanade.HackathonAzul.DaniBot.Cards.Factory;
 using Avanade.HackathonAzul.DaniBot.Models;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
@@ -14,10 +15,13 @@ namespace Avanade.HackathonAzul.DaniBot.Dialogs.LoginDialogs
 {
 	public class AuthenticateViaTextDialog : ComponentDialog
 	{
+		private readonly string AuthenticatedMenuDialogId;
+
 		public AuthenticateViaTextDialog()
 			: base(nameof(AuthenticateViaTextDialog))
 		{
 			AddDialog(new TextPrompt(nameof(TextPrompt)));
+			AddDialog(new AuthenticatedMenuDialog());
 			AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
 			{
 				WaitUserInputs,
@@ -25,6 +29,7 @@ namespace Avanade.HackathonAzul.DaniBot.Dialogs.LoginDialogs
 				FinalStepAsync,
 			}));
 
+			AuthenticatedMenuDialogId = nameof(AuthenticatedMenuDialog);
 			InitialDialogId = nameof(WaterfallDialog);
 		}
 
@@ -37,7 +42,7 @@ namespace Avanade.HackathonAzul.DaniBot.Dialogs.LoginDialogs
 		private async Task<DialogTurnResult> SendLogin(WaterfallStepContext stepContext, CancellationToken cancellationToken)
 		{
 			UserModel userModel = JsonConvert.DeserializeObject<UserModel>(stepContext.Context.Activity.Value.ToString());
-			return await stepContext.EndDialogAsync(cancellationToken);
+			return await stepContext.BeginDialogAsync(AuthenticatedMenuDialogId, cancellationToken);
 		}
 
 		private async Task<DialogTurnResult> FinalStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
