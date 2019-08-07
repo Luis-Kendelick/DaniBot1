@@ -1,6 +1,9 @@
 ﻿using Avanade.HackathonAzul.DaniBot.Cards.Factory;
+using Avanade.HackathonAzul.DaniBot.Models;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,14 +34,15 @@ namespace Avanade.HackathonAzul.DaniBot.Dialogs.LoginDialogs
 			return new DialogTurnResult(DialogTurnStatus.Waiting);
 		}
 
-		private async Task<DialogTurnResult> FinalStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
-		{
-			throw new NotImplementedException();
-		}
-
 		private async Task<DialogTurnResult> SendLogin(WaterfallStepContext stepContext, CancellationToken cancellationToken)
 		{
-			throw new NotImplementedException();
+			UserModel userModel = JsonConvert.DeserializeObject<UserModel>(stepContext.Context.Activity.Value.ToString());
+			return await stepContext.EndDialogAsync(cancellationToken);
+		}
+
+		private async Task<DialogTurnResult> FinalStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+		{
+			return await stepContext.EndDialogAsync(cancellationToken);
 		}
 	}
 }

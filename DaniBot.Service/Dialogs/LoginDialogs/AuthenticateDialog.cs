@@ -42,22 +42,20 @@ namespace Avanade.HackathonAzul.DaniBot.Dialogs.LoginDialogs
 			switch (stepContext.Result.ToString())
 			{
 				case "UserPassword":
-					await stepContext.BeginDialogAsync(AuthenticateViaTextId, cancellationToken);
-					break;
+					return await stepContext.BeginDialogAsync(AuthenticateViaTextId, cancellationToken);
 				case "Voice":
-					break;
+					return await stepContext.EndDialogAsync(cancellationToken);
 				case "Face":
-					break;
+					return await stepContext.EndDialogAsync(cancellationToken);
 				case "Fingprint":
-					break;
+					return await stepContext.EndDialogAsync(cancellationToken);
 				default:
 					var didntUnderstandMessageText = "Desculpe, não entendi!";
 					var didntUnderstandMessage = MessageFactory.Text(didntUnderstandMessageText, didntUnderstandMessageText, InputHints.IgnoringInput);
 					await stepContext.Context.SendActivityAsync(didntUnderstandMessage, cancellationToken);
-					break;
+					return await stepContext.EndDialogAsync(cancellationToken);
 			}
-
-			return await stepContext.NextAsync(null, cancellationToken);
+			
 		}
 	}
 }

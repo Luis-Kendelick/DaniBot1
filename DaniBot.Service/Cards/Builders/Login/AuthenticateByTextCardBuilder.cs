@@ -31,7 +31,7 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Builders.Login
 							},
 							new AdaptiveTextInput()
 							{
-								Id = "Usuário",
+								Id = "User",
 								Placeholder = "Por favor, insira seu usuário",
 								Style = AdaptiveTextInputStyle.Text
 							},
@@ -43,7 +43,7 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Builders.Login
 							},
 							new AdaptiveTextInput()
 							{
-								Id = "Senha",
+								Id = "Password",
 								Placeholder = "Por favor, insira sua senha",
 								Style = AdaptiveTextInputStyle.Text
 							}

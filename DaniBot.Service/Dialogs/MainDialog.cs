@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using Avanade.HackathonAzul.DaniBot.Cards.Factory;
+using Avanade.HackathonAzul.DaniBot.Constants;
 using Avanade.HackathonAzul.DaniBot.Dialogs.LoginDialogs;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
@@ -58,15 +59,15 @@ namespace Avanade.Azul.DaniBot.Dialogs
 		{
 			switch (stepContext.Result.ToString())
 			{
-				case "LocalizarVoo":
+				case MainDialogConstants.LocalizaVoo:
 					return await stepContext.BeginDialogAsync(LocateFlightDialogId, cancellationToken);
-				case "RealizarCadastro":
+				case MainDialogConstants.RealizarCadastro:
 					return await stepContext.BeginDialogAsync(RegisterDialogId, cancellationToken);
-				case "ConsultarFAQ":
+				case MainDialogConstants.FAQ:
 					return await stepContext.BeginDialogAsync(FAQDialogId, cancellationToken);
-				case "ResetSenha":
+				case MainDialogConstants.ResetSenha:
 					return await stepContext.BeginDialogAsync(ResetPasswordDialogId, cancellationToken);
-				case "Login":
+				case MainDialogConstants.Login:
 					return await stepContext.BeginDialogAsync(AuthenticateDialogId, cancellationToken);
 				default:
 					var didntUnderstandMessageText = Resources.Messages.Global.SorryIDontUnderstand;
