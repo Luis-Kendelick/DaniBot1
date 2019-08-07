@@ -4,6 +4,7 @@
 using Avanade.HackathonAzul.DaniBot.Cards.Factory;
 using Avanade.HackathonAzul.DaniBot.Constants;
 using Avanade.HackathonAzul.DaniBot.Dialogs.LoginDialogs;
+using Avanade.HackathonAzul.DaniBot.Models;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
