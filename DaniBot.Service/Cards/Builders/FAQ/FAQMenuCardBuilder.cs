@@ -1,5 +1,5 @@
 ﻿using AdaptiveCards;
-using Avanade.Azul.DaniBot.Dialogs;
+using Avanade.HackathonAzul.DaniBot.Constants;
 using Microsoft.Bot.Schema;
 using System;
 using System.Collections.Generic;

@@ -7,9 +7,14 @@ namespace Microsoft.Bot.Builder
 {
 	public static class ITurnContextExtensions
 	{
-        public static Task<ResourceResponse> SendActivityAsyncFromAdaptiveCard(this ITurnContext turnContext, ICardBuilder cardBuilder, CancellationToken cancellationToken = default)
-        {
-            return turnContext.SendActivityAsync(MessageFactory.Attachment(cardBuilder.Build()), cancellationToken);
-        }
+		public static Task<ResourceResponse> SendActivityAsyncFromAdaptiveCard(this ITurnContext turnContext, ICardBuilder cardBuilder, CancellationToken cancellationToken = default, bool isCarousel = false)
+		{
+			var attachment = MessageFactory.Attachment(cardBuilder.Build());
+
+			if (isCarousel)
+				attachment.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+
+			return turnContext.SendActivityAsync(attachment, cancellationToken);
+		}
 	}
 }

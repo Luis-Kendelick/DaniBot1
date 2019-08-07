@@ -1,6 +1,7 @@
 ﻿using Avanade.HackathonAzul.DaniBot.Cards.Builders.AuthenticatedMenu;
 using Avanade.HackathonAzul.DaniBot.Cards.Builders.FAQ;
 using Avanade.HackathonAzul.DaniBot.Cards.Builders.Login;
+using Avanade.HackathonAzul.DaniBot.Cards.Builders.TudoAzul;
 using Avanade.HackathonAzul.DaniBot.Cards.Builders.WelcomeMenu;
 using Avanade.HackathonAzul.DaniBot.Models;
 using System.Collections.Generic;
@@ -37,6 +38,11 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Factory
 		public static AuthenticateByTextCardBuilder CreateAuthenticateByTextCardBuilder()
 		{
 			return new AuthenticateByTextCardBuilder();
+		}
+
+		public static RetroClaimBuilder CreateRetroClaimCardBuilder()
+		{
+			return new RetroClaimBuilder();
 		}
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using AdaptiveCards;
+using Avanade.HackathonAzul.DaniBot.Constants;
 using Microsoft.Bot.Schema;
 using System.Collections.Generic;
 
@@ -13,7 +14,7 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Builders.Login
 				new Attachment
 				{
 					ContentType = AdaptiveCard.ContentType,
-					Content = new AdaptiveCard("1.0")
+					Content = new AdaptiveCard(GlobalConstants.ADAPTIVE_CARD_VERSION)
 					{
 						Body = new List<AdaptiveElement>
 						{
