@@ -1,7 +1,9 @@
-﻿using Avanade.HackathonAzul.DaniBot.Cards.Builders;
+﻿using Avanade.HackathonAzul.DaniBot.Cards.Builders.AuthenticatedMenu;
 using Avanade.HackathonAzul.DaniBot.Cards.Builders.FAQ;
 using Avanade.HackathonAzul.DaniBot.Cards.Builders.Login;
+using Avanade.HackathonAzul.DaniBot.Cards.Builders.WelcomeMenu;
 using Avanade.HackathonAzul.DaniBot.Models;
+using System.Collections.Generic;
 
 namespace Avanade.HackathonAzul.DaniBot.Cards.Factory
 {
@@ -17,7 +19,7 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Factory
             return new FAQMenuCardBuilder();
         }
 
-        public static FAQViewCardBuilder CreateFAQViewCardBuilder(FAQModel fAQModel)
+        public static FAQViewCardBuilder CreateFAQViewCardBuilder(FAQViewModel fAQModel)
         {
             return new FAQViewCardBuilder(fAQModel);
         }
@@ -27,9 +29,9 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Factory
             return new AuthenticateCardBuilder();
         }
 
-        public static AuthenticatedCardBuilder CreateAuthenticatedCardBuilder()
+        public static AuthenticatedMenuCardBuilder CreateAuthenticatedMenuCardBuilder(List<IAuthenticatedMenuAttachmentBuilder> authenticatedMenuAttachmentBuilders)
         {
-            return new AuthenticatedCardBuilder();
+            return new AuthenticatedMenuCardBuilder(authenticatedMenuAttachmentBuilders);
         }
 
 		public static AuthenticateByTextCardBuilder CreateAuthenticateByTextCardBuilder()

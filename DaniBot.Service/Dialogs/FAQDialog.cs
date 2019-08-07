@@ -42,7 +42,7 @@ namespace Avanade.Azul.DaniBot.Dialogs
 				case FAQDialogConstants.CheckIn:
                     await stepContext.Context.SendActivityAsyncFromAdaptiveCard(
                         CardFactory.CreateFAQViewCardBuilder(
-                            new FAQModel
+                            new FAQViewModel
                             {
                                 Title =  Resources.Messages.FAQDialog.CheckInTitle,
                                 Content = Resources.Messages.FAQView.ContentCheckIn,
@@ -55,7 +55,7 @@ namespace Avanade.Azul.DaniBot.Dialogs
 				case FAQDialogConstants.TudoAzul:
                     await stepContext.Context.SendActivityAsyncFromAdaptiveCard(
                         CardFactory.CreateFAQViewCardBuilder(
-                            new FAQModel
+                            new FAQViewModel
                             {
                                 Title = Resources.Messages.FAQDialog.TudoAzulTitle,
 								Content = Resources.Messages.FAQView.ContentTudoAzul,
@@ -67,7 +67,7 @@ namespace Avanade.Azul.DaniBot.Dialogs
 				case FAQDialogConstants.Dani:
                     await stepContext.Context.SendActivityAsyncFromAdaptiveCard(
                         CardFactory.CreateFAQViewCardBuilder(
-                            new FAQModel
+                            new FAQViewModel
                             {
                                 Title = Resources.Messages.FAQDialog.DaniTitle,
 								Content = Resources.Messages.FAQView.ContentDani,

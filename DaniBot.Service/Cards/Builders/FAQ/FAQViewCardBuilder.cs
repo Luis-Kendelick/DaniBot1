@@ -6,48 +6,48 @@ using System.Collections.Generic;
 
 namespace Avanade.HackathonAzul.DaniBot.Cards.Builders.FAQ
 {
-	public class FAQViewCardBuilder : ICardBuilder
-	{
-		private readonly FAQModel _fAQModel;
+    public class FAQViewCardBuilder : ICardBuilder
+    {
+        private readonly FAQViewModel _FAQViewModel;
 
-		public FAQViewCardBuilder(FAQModel fAQModel)
-		{
-			_fAQModel = fAQModel;
-		}
+        public FAQViewCardBuilder(FAQViewModel fAQViewModel)
+        {
+            _FAQViewModel = fAQViewModel;
+        }
 
-		public List<Attachment> Build()
-		{
-			return new List<Attachment>
-			{
-				new Attachment
-				{
-					ContentType = AdaptiveCard.ContentType,
-					Content = new AdaptiveCard("1.0")
-					{
-						Body = new List<AdaptiveElement>
-						{
-							new AdaptiveTextBlock()
-							{
-								Text = _fAQModel.Title,
-								Size = AdaptiveTextSize.Large,
-								Wrap = true
-							},
-							new AdaptiveImage
-							{
-								Url = new Uri(_fAQModel.Image),
-								Size = AdaptiveImageSize.Stretch
-							},
-							new AdaptiveTextBlock()
-							{
-								Text = _fAQModel.Content,
-								Size = AdaptiveTextSize.Medium,
-								Weight = AdaptiveTextWeight.Lighter,
-								Wrap = true
-							}
-						}
-					}
-				}
-			};
-		}
-	}
+        public List<Attachment> Build()
+        {
+            return new List<Attachment>
+            {
+                new Attachment
+                {
+                    ContentType = AdaptiveCard.ContentType,
+                        Content = new AdaptiveCard("1.0")
+                    {
+                        Body = new List<AdaptiveElement>
+                        {
+                            new AdaptiveTextBlock()
+                            {
+                                Text = _FAQViewModel.Title,
+                                Size = AdaptiveTextSize.Large,
+                                Wrap = true
+                            },
+                            new AdaptiveImage
+                            {
+                                Url = new Uri(_FAQViewModel.Image),
+                                Size = AdaptiveImageSize.Stretch
+                            },
+                            new AdaptiveTextBlock()
+                            {
+                                Text = _FAQViewModel.Content,
+                                Size = AdaptiveTextSize.Medium,
+                                Weight = AdaptiveTextWeight.Lighter,
+                                Wrap = true
+                            }
+                        }
+                    }
+                }
+            };
+        }
+    }
 }

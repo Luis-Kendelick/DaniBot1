@@ -17,7 +17,7 @@ namespace System
 		private Dictionary<ECultureType, Localization> _LocalizationByLanguage;
 		private ECultureType? _CurrentLanguage;
 		private readonly static ECultureType _DEFAULT_LANGUAGE = ECultureType.pt_BR;
-		private readonly static string _BASE_CONFIG_FILE_PATH = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + @"\Localization\messages.";
+		private readonly static string _BASE_CONFIG_FILE_PATH = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + @"\Resources\Localization\messages.";
 
 		private LocalizationProvider()
 		{

@@ -3,7 +3,7 @@ using Microsoft.Bot.Schema;
 using System;
 using System.Collections.Generic;
 
-namespace Avanade.HackathonAzul.DaniBot.Cards.Builders
+namespace Avanade.HackathonAzul.DaniBot.Cards.Builders.WelcomeMenu
 {
     public class WelcomeMenuCardBuilder : ICardBuilder
     {
@@ -14,9 +14,10 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Builders
                 new Attachment
                 {
                     ContentType = AdaptiveCard.ContentType,
-                    Content = new AdaptiveCard(Resources.Messages.Global.AdaptiveCardVersion)
+                    Content = new AdaptiveCard(GlobalConstants.ADAPTIVE_CARD_VERSION)
                     {
-						Body = new List<AdaptiveElement>
+                        Type = AdaptiveCard.TypeName,
+                        Body = new List<AdaptiveElement>
                         {
                             new AdaptiveTextBlock()
                             {

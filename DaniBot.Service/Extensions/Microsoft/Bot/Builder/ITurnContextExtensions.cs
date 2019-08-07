@@ -1,4 +1,4 @@
-﻿using Avanade.HackathonAzul.DaniBot.Cards;
+﻿using Avanade.HackathonAzul.DaniBot.Cards.Builders;
 using Microsoft.Bot.Schema;
 using System.Threading;
 using System.Threading.Tasks;

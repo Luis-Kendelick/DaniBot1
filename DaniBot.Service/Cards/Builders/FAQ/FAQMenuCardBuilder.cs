@@ -15,7 +15,7 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Builders.FAQ
 				new Attachment
 				{
 					ContentType = AdaptiveCard.ContentType,
-					Content = new AdaptiveCard(Resources.Messages.Global.AdaptiveCardVersion)
+					Content = new AdaptiveCard(GlobalConstants.ADAPTIVE_CARD_VERSION)
 					{
 						Body = new List<AdaptiveElement>
 						{

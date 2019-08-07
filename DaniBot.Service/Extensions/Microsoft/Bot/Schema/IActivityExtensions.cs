@@ -1,5 +1,5 @@
 ﻿using AdaptiveCards;
-using Avanade.HackathonAzul.DaniBot.Cards;
+using Avanade.HackathonAzul.DaniBot.Cards.Builders;
 using Microsoft.Bot.Builder.Dialogs;
 using System;
 using System.Collections.Generic;
