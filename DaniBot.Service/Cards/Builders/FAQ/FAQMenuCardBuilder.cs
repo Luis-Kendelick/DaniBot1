@@ -15,19 +15,19 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Builders.FAQ
 				new Attachment
 				{
 					ContentType = AdaptiveCard.ContentType,
-					Content = new AdaptiveCard("1.0")
+					Content = new AdaptiveCard(Resources.Messages.Global.AdaptiveCardVersion)
 					{
 						Body = new List<AdaptiveElement>
 						{
 							new AdaptiveTextBlock()
 							{
-								Text = "Aqui estão algumas perguntas frequentes que podem te ajudar:",
+								Text = Resources.Messages.FAQDialog.Title,
 								Size = AdaptiveTextSize.Default,
 								Wrap = true
 							},
 							new AdaptiveImage
 							{
-								Url = new Uri("https://static.wixstatic.com/media/ece054_afb801e3e96c425783b598f49a2a41d8~mv2.png/v1/fill/w_600,h_288,al_c,q_80,usm_0.66_1.00_0.01/best-magento-2_3-FAQ.webp"),
+								Url = new Uri(Resources.Messages.FAQDialog.URL),
 								Size = AdaptiveImageSize.Stretch
 							}
 						},
@@ -35,18 +35,18 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Builders.FAQ
 						{
 							new AdaptiveSubmitAction
 							{
-								Title = "Quais as vantagens de fazer o check-in online?",
-								Data = "CheckIn"
+								Title = Resources.Messages.FAQDialog.CheckInTitle,
+								Data = Resources.Messages.FAQDialog.CheckIn
 							},
 							new AdaptiveSubmitAction
 							{
-								Title = "Como funciona o Tudo Azul?",
-								Data = "TudoAzulFaq"
+								Title = Resources.Messages.FAQDialog.TudoAzulTitle,
+								Data = Resources.Messages.FAQDialog.TudoAzul
 							},
 							new AdaptiveSubmitAction
 							{
-								Title = "Quais a vantagens de utilizar Dani?",
-								Data = "VantagensDani"
+								Title = Resources.Messages.FAQDialog.DaniTitle,
+								Data = Resources.Messages.FAQDialog.Dani
 							}
 						}
 					}

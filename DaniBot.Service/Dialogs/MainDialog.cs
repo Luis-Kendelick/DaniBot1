@@ -82,7 +82,8 @@ namespace Avanade.Azul.DaniBot.Dialogs
 		{
 			var messageText = stepContext.Options?.ToString() ?? Resources.Messages.Global.AnythingElse;
 			var promptMessage = MessageFactory.Text(messageText, messageText, InputHints.ExpectingInput);
-			return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = promptMessage }, cancellationToken);
+			await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = promptMessage }, cancellationToken);
+			return await stepContext.EndDialogAsync(cancellationToken);
 		}
 
 	}
