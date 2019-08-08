@@ -62,5 +62,12 @@
 		"originCity": "Cidade de origem:",
 		"originCityId": "OriginCity",
 		"originCityPlaceHold": "Por favor, insira as três primeiras letras do aeroporto de origem (GRU)"
+	},
+	"authenticatedMenuDialog": {
+		"tudoAzulCardMessages": {
+			"yourBalanceIs": "Seu saldo TudoAzul é de {0} pontos",
+			"statements": "Extrato de pontos",
+			"redeemPoints": "Resgatar pontos"
+		}
 	}
 }
