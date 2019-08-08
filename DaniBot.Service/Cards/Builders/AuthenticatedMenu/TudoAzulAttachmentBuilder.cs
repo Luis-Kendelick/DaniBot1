@@ -32,7 +32,7 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Builders.AuthenticatedMenu
                         },
                         new AdaptiveTextBlock()
                         {
-                            Text = string.Format(Resources.Messages.AuthenticatedMenuDialog.PromoCardMessages.YourBalanceIs, _TodoAzulSummaryModel.Balance),
+                            Text = string.Format(Resources.Messages.AuthenticatedMenuDialog.TudoAzulCardMessages.YourBalanceIs, _TodoAzulSummaryModel.Balance),
                             Size = AdaptiveTextSize.Default,
                             Wrap = true
                         }
@@ -41,8 +41,13 @@ namespace Avanade.HackathonAzul.DaniBot.Cards.Builders.AuthenticatedMenu
                     {
                         new AdaptiveSubmitAction
                         {
-                            Title = Resources.Messages.AuthenticatedMenuDialog.Statements,
+                            Title = Resources.Messages.AuthenticatedMenuDialog.TudoAzulCardMessages.Statements,
                             Data = "Extrato"
+                        },
+                        new AdaptiveSubmitAction
+                        {
+                            Title = Resources.Messages.AuthenticatedMenuDialog.TudoAzulCardMessages.RedeemPoints,
+                            Data = "Resgatar"
                         }
                     }
                 }

@@ -1,4 +1,6 @@
-﻿namespace Avanade.HackathonAzul.DaniBot.Localization
+﻿using System;
+
+namespace Avanade.HackathonAzul.DaniBot.Localization
 {
     public partial struct Localization
     {
@@ -6,13 +8,13 @@
 
         public partial struct AuthenticatedMenuMessages
         {
-            public string Statements { get; set; }
+            public TudoAzulMessages TudoAzulCardMessages { get; set; }
 
-            public PromoMessages PromoCardMessages { get; set; }
-
-            public struct PromoMessages
+            public struct TudoAzulMessages
             {
                 public string YourBalanceIs { get; set; }
+                public string Statements { get; set; }
+                public string RedeemPoints { get; internal set; }
             }
         }
     }
