@@ -14,7 +14,7 @@ namespace Avanade.HackathonAzul.DaniBot.Localization
             {
                 public string YourBalanceIs { get; set; }
                 public string Statements { get; set; }
-                public string RedeemPoints { get; internal set; }
+                public string RedeemPoints { get; set; }
             }
         }
     }
