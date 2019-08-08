@@ -2,7 +2,8 @@
 	"error": {
 		"tooManyAttempts": "Você deveria ter digitado o que eu esperava, mas ok.",
 		"accessDenied": "Acesso negado!",
-		"internalServerError": "Desculpe, deu bug. Tente outra vez."
+		"internalServerError": "Desculpe, deu bug. Tente outra vez.",
+		"wrongUserAndPassword": "Usuário e/ou senha incorretos. Por favor, tente novamente!"
 	},
 	"global": {
 		"adaptiveCardVersion": "1.0",
