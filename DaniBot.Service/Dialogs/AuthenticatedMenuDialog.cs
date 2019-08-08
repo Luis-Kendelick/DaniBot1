@@ -44,13 +44,13 @@ namespace Avanade.Azul.DaniBot.Dialogs
                     },
                     new FlightInformationModel
                     {
-                        DepartureAirport = "SAO",
-                        ArrivalAirport = "REC",
-                        DepartureCity = "Sao Paulo",
-                        ArrivalCity = "Recife",
+                        DepartureAirport = "REC",
+                        ArrivalAirport = "SAO",
+                        DepartureCity = "Recife",
+                        ArrivalCity = "Sao Paulo",
                         DepartureDate = new DateTime(2019, 9, 7, 21, 30, 0),
                         ArrivalDate = new DateTime(2019, 9, 8, 2, 30, 0),
-                        Number = "FH4JJ1",
+                        Number = "FH4JJ2",
                         Status = FlightStatus.OnTime
                     },
                     new FlightInformationModel
@@ -61,7 +61,7 @@ namespace Avanade.Azul.DaniBot.Dialogs
                         ArrivalCity = "Recife",
                         DepartureDate = new DateTime(2019, 10, 7, 20, 30, 0),
                         ArrivalDate = new DateTime(2019, 10, 8, 1, 15, 0),
-                        Number = "FH4JJ1",
+                        Number = "FH4JJ3",
                         Status = FlightStatus.OnTime
                     }
                 }));
