@@ -58,7 +58,7 @@ namespace Avanade.Azul.DaniBot.Dialogs
 
 		private async Task<DialogTurnResult> ActStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
 		{
-			switch (stepContext.Result.ToString())
+            switch (stepContext.Result.ToString())
 			{
 				case MainDialogConstants.LocalizaVoo:
 					return await stepContext.BeginDialogAsync(LocateFlightDialogId, cancellationToken);
